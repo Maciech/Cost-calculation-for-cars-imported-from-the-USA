@@ -1,10 +1,13 @@
 public class CarProperties {
-    int transportUSA;
-    int transportEU = 780;
-    int customClearanceUSA = 150;
-    int customClearanceEU = 450;
-    double carBid;
+    public int transportUSA;
+    public int transportEU = 780;
+    public int customClearanceUSA = 150;
+    public int customClearanceEU = 450;
+    public double carBid;
+    public boolean over2l = false;
 
+    //Class implementation with a lot different parameters, transport from Usa and car bid must be specified
+    //rest can be set by default
     CarProperties(int transportUSA, int transportEU, int customClearanceUSA, int customClearanceEU, int carBid){
         this.transportUSA = transportUSA;
         this.transportEU = transportEU;
@@ -16,7 +19,25 @@ public class CarProperties {
         this.transportUSA = transportUSA;
         this.carBid = carBid;
     }
-    public double sumFees(CarProperties carProperties){
+    CarProperties(int transportUSA,int transportEU, double carBid){
+        this.transportUSA = transportUSA;
+        this.transportEU = transportEU;
+        this.carBid = carBid;
+    }
+    CarProperties(int transportUSA, double carBid, boolean over2l){
+        this.transportUSA = transportUSA;
+        this.carBid = carBid;
+        this.over2l = over2l;
+    }
+    CarProperties(int transportUSA,int transportEU, double carBid, boolean over2l){
+        this.transportUSA = transportUSA;
+        this.transportEU = transportEU;
+        this.carBid = carBid;
+        this.over2l = over2l;
+    }
+
+    //Summing all transport costs with car value
+    public double sumTransportFees(CarProperties carProperties){
         double result;
         result = carProperties.carBid + carProperties.customClearanceUSA + carProperties.transportUSA + carProperties.transportEU + carProperties.customClearanceEU;
         return result;
