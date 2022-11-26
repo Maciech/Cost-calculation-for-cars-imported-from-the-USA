@@ -1,13 +1,22 @@
+import java.io.IOException;
+import java.net.URLConnection;
+import java.net.URL;
+
 public class Main {
 
 
-    public static void main(String[] args) {
-        System.out.println("Hello in Car Import Calculator \n");
-        double kursDolara = 4.52;
-        System.out.println("Current $ calculation: "+kursDolara + "zł" +"\n");
-        CarProperties carEvaluation = new CarProperties(1200,4200);
+    public static void main(String[] args) throws IOException {
 
-        System.out.println(carEvaluation.sumTransportFees(carEvaluation));
+        System.out.println("Hello in Car Import Calculator \n");
+        double dollarCourse = 4.52;
+        System.out.println("Current $ calculation: "+dollarCourse + "zł" +"\n");
+        //CarProperties carEvaluation = new CarProperties(1200,4200);
+        webConnection conn = new webConnection();
+      //  conn.readWeb();
+        CarProperties carEvaluation = new DataReader().readData();
+        System.out.println(sumAllCosts(carEvaluation, dollarCourse)+"$");
+        System.out.println(sumAllCosts(carEvaluation, dollarCourse)/dollarCourse+"zł");
+
         displayEstimatedValues(carEvaluation);
 
     }
@@ -26,37 +35,59 @@ public class Main {
     }
 
     //Custom duty fee - 10% of car bid value
-    private static double customDuty(CarProperties carProperties){
-        return carProperties.carBid*0.1;
+    private static double customDuty(double bidAmount){
+        return bidAmount*0.1;
     }
 
     //Tax 21% Calculation - 21% counted from car value plus the value of the duty
-    private static double tax21(CarProperties carProperties){
-        double result = carProperties.carBid + customDuty(carProperties);
-        return result*1.21;
+    private static double tax21(double bidAmount){
+        double result = bidAmount + customDuty(bidAmount);
+        return result*0.21;
     }
 
     //Excise fee - 18.6% when engine capacity over 2.0L, otherwise 3.1%
     private static double exciseTax(CarProperties carProperties){
         double result;
         if (carProperties.over2l){
-            result = carProperties.carBid * 1.186;
+            result = carProperties.carBid * 0.186;
         } else {
-            result = carProperties.carBid * 1.031;
+            result = carProperties.carBid * 0.031;
         }
         return result;
     }
 
+    //
+    private static double serviceSalary(double bidAmount){
+        double result = 650;
+        return bidAmount*0.05 > 650 ? bidAmount : result;
+    }
     //Display parameters
     private static void displayEstimatedValues(CarProperties carProperties){
-        String displayParameters = "\n" + "Costs estimation" + "\n" + "Car bid set for: " + carProperties.carBid + "\n" +
-                "Car auction fee calculated: " + auctionFee(carProperties.carBid) + "\n" +
-                "Cost of transport from USA: " + carProperties.transportUSA + "\n" +
-                "Cost of custom clearance USA: " + carProperties.customClearanceUSA + "\n" +
-                "Cost of transport from EU: " + carProperties.transportEU + "\n" +
-                "Cost of custom clearance EU: " + carProperties.customClearanceEU + "\n";
+        String displayParameters = "\n" + "Costs estimation" + "\n" +
+                "   Car bid set for: " + carProperties.carBid + "$" + "\n" +
+                "   Car auction fee calculated: " + auctionFee(carProperties.carBid) + "$" +"\n" +
+                "   Cost of transport from USA: " + carProperties.transportUSA + "$" + "\n" +
+                "   Cost of custom clearance USA: " + carProperties.customClearanceUSA + "$" + "\n" +
+                "   Cost of transport from EU: " + carProperties.transportEU + "$" + "\n" +
+                "   Cost of custom clearance EU: " + carProperties.customClearanceEU + "$" + "\n" +
+                "   Cost of custom duty: " + customDuty(carProperties.carBid) + "$" + "\n" +
+                "   Cost of 21% tax: " + tax21(carProperties.carBid) + "$" + "\n" +
+                "   Cost of excise tax: " + exciseTax(carProperties) + "$" + "\n" +
+                "   Cost of service salary: " + serviceSalary(carProperties.carBid) + "$" + "\n" +
+                "   Cost of car delivery in Poland " + carProperties.transportPL + "zł" + "\n"
+                ;
         System.out.println(displayParameters);
     }
 
+    private static double sumAllCosts(CarProperties carProperties, double dollarCourse){
+        double totalCost = 0;
+        totalCost = carProperties.sumTransportFees(carProperties);
+        totalCost += auctionFee(carProperties.carBid);
+        totalCost += customDuty(carProperties.carBid);
+        totalCost += tax21(carProperties.carBid);
+        totalCost += exciseTax(carProperties);
+        totalCost += serviceSalary(carProperties.carBid) + carProperties.transportPL/dollarCourse;
 
+        return totalCost;
+    }
 }

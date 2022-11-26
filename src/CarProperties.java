@@ -5,6 +5,7 @@ public class CarProperties {
     public int customClearanceEU = 450;
     public double carBid;
     public boolean over2l = false;
+    public double transportPL = 2000;
 
     //Class implementation with a lot different parameters, transport from Usa and car bid must be specified
     //rest can be set by default
