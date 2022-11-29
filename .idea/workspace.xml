@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72399bf2-7a76-43f6-8ff6-9349ea268067" name="Changes" comment="Added comment line, describing functions and library for reading actual data from web, not used yet">
-      <change afterPath="$PROJECT_DIR$/src/DataReader.java" afterDir="false" />
+    <list default="true" id="72399bf2-7a76-43f6-8ff6-9349ea268067" name="Changes" comment="Few functions added with calculation of tax and duty costs based on predicted bid value">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

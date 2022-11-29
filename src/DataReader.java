@@ -12,30 +12,47 @@ public class DataReader {
 
     public CarProperties readData() throws IOException {
 
+        CarProperties carProperties = new CarProperties(transportUSA, carBid);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String line;
+
+
         System.out.println("Name the price for the car you want to pay in $: ");
-
+        line = reader.readLine();
+        if (!line.isEmpty()) {
             carBid = Double.parseDouble(reader.readLine());
-        System.out.println("Name the price of transport over USA: ");
-            transportUSA = Integer.parseInt(reader.readLine());
-        System.out.println("Name the price of transport to EU: ");
-            transportEU = Integer.parseInt(reader.readLine());
-        System.out.println("Name the price of transport over USA: ");
-            customClearanceUSA = Integer.parseInt(reader.readLine());
-        System.out.println("Name the price of transport over USA: ");
-            customClearanceEU = Integer.parseInt(reader.readLine());
-        System.out.println("Name the price of transport over USA: ");
-            over2l = Boolean.parseBoolean(reader.readLine());
-        if (transportUSA == 0){
 
+            System.out.println("Name the price of transport over USA: ");
+            line = reader.readLine();
+            if (!line.isEmpty()) {
+                transportUSA = Integer.parseInt(reader.readLine());
+                carProperties.transportUSA = transportUSA;
+            }
+            System.out.println("Name the price of transport to EU: ");
+            line = reader.readLine();
+            if (!line.isEmpty()) {
+                transportEU = Integer.parseInt(line);
+                carProperties.transportEU = transportEU;
+            }
+            System.out.println("Name the price of custom clearance USA: ");
+            line = reader.readLine();
+            if (!line.isEmpty()) {
+                customClearanceUSA = Integer.parseInt(line);
+                carProperties.customClearanceUSA = customClearanceUSA;
+            }
+            System.out.println("Name the price of custom clearance EU: ");
+            line = reader.readLine();
+            if (!line.isEmpty()) {
+                customClearanceEU = Integer.parseInt(line);
+                carProperties.customClearanceEU = customClearanceEU;
+            }
+            System.out.println("Is engine over 2l capacity? ");
+            line = reader.readLine();
+            if (!line.isEmpty()){
+                over2l = Boolean.parseBoolean(line);
+                carProperties.over2l = over2l;
+            }
         }
-        if (over2l){
-
-        }
-
-
-        CarProperties carProperties = new CarProperties(transportUSA,transportEU,carBid);
-
         return carProperties;
     }
 

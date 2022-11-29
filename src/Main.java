@@ -1,25 +1,38 @@
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.URLConnection;
-import java.net.URL;
+import java.io.InputStreamReader;
 
 public class Main {
 
 
     public static void main(String[] args) throws IOException {
-
         System.out.println("Hello in Car Import Calculator \n");
         double dollarCourse = 4.52;
         System.out.println("Current $ calculation: "+dollarCourse + "zł" +"\n");
         //CarProperties carEvaluation = new CarProperties(1200,4200);
-        webConnection conn = new webConnection();
-      //  conn.readWeb();
-        CarProperties carEvaluation = new DataReader().readData();
-        System.out.println(sumAllCosts(carEvaluation, dollarCourse)+"$");
-        System.out.println(sumAllCosts(carEvaluation, dollarCourse)/dollarCourse+"zł");
-
-        displayEstimatedValues(carEvaluation);
+        //webConnection conn = new webConnection();
+        //  conn.readWeb();
+        Main main = new Main();
+        main.startCalculation(dollarCourse);
 
     }
+    private void startCalculation(double dollarCourse) throws IOException {
+
+        CarProperties carEvaluation = new DataReader().readData();
+        if (carEvaluation.carBid != 0){
+            System.out.println(sumAllCosts(carEvaluation, dollarCourse)+"$");
+            System.out.println(sumAllCosts(carEvaluation, dollarCourse)/dollarCourse+"zł");
+            displayEstimatedValues(carEvaluation);
+        } else {
+            System.out.println("Error 404 - you can't calculate from zero car value!");
+            System.out.println("Try again? ( yes / no )");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            if (bufferedReader.readLine().contains("yes")){
+                startCalculation(dollarCourse);
+            }
+        }
+    }
+
     //Auction fee based on car Value - minimum 690$ max 1090$, depend on car bid value
     private static double auctionFee(double bidAmount){
         double auctionPercent = 0.195;
@@ -80,7 +93,7 @@ public class Main {
     }
 
     private static double sumAllCosts(CarProperties carProperties, double dollarCourse){
-        double totalCost = 0;
+        double totalCost;
         totalCost = carProperties.sumTransportFees(carProperties);
         totalCost += auctionFee(carProperties.carBid);
         totalCost += customDuty(carProperties.carBid);
