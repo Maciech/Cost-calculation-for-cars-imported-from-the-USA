@@ -19,9 +19,10 @@ public class Main {
     private void startCalculation(double dollarCourse) throws IOException {
 
         CarProperties carEvaluation = new DataReader().readData();
+
         if (carEvaluation.carBid != 0){
             System.out.println(sumAllCosts(carEvaluation, dollarCourse)+"$");
-            System.out.println(sumAllCosts(carEvaluation, dollarCourse)/dollarCourse+"zł");
+            System.out.println(sumAllCosts(carEvaluation, dollarCourse)*dollarCourse+"zł");
             displayEstimatedValues(carEvaluation);
         } else {
             System.out.println("Error 404 - you can't calculate from zero car value!");

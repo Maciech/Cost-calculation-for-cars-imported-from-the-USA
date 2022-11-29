@@ -16,16 +16,16 @@ public class DataReader {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String line;
 
-
         System.out.println("Name the price for the car you want to pay in $: ");
         line = reader.readLine();
         if (!line.isEmpty()) {
-            carBid = Double.parseDouble(reader.readLine());
+            carBid = Double.parseDouble(line);
+            carProperties.carBid = carBid;
 
             System.out.println("Name the price of transport over USA: ");
             line = reader.readLine();
             if (!line.isEmpty()) {
-                transportUSA = Integer.parseInt(reader.readLine());
+                transportUSA = Integer.parseInt(line);
                 carProperties.transportUSA = transportUSA;
             }
             System.out.println("Name the price of transport to EU: ");
