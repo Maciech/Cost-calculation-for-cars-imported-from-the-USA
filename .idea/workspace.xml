@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72399bf2-7a76-43f6-8ff6-9349ea268067" name="Changes" comment="Problem with data reading resolved. Data reading from keyboard working properly">
+    <list default="true" id="72399bf2-7a76-43f6-8ff6-9349ea268067" name="Changes" comment="XML update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669761995796</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="XML update">
+      <created>1670085788272</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670085788272</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +109,7 @@
     <MESSAGE value="Added comment line, describing functions and" />
     <MESSAGE value="Added comment line, describing functions and library for reading actual data from web, not used yet" />
     <MESSAGE value="Problem with data reading resolved. Data reading from keyboard working properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Problem with data reading resolved. Data reading from keyboard working properly" />
+    <MESSAGE value="XML update" />
+    <option name="LAST_COMMIT_MESSAGE" value="XML update" />
   </component>
 </project>

@@ -48,8 +48,8 @@ public class DataReader {
             }
             System.out.println("Is engine over 2l capacity? ");
             line = reader.readLine();
-            if (!line.isEmpty()){
-                over2l = Boolean.parseBoolean(line);
+            if (line.equals("yes")){
+                over2l = true;
                 carProperties.over2l = over2l;
             }
         }
