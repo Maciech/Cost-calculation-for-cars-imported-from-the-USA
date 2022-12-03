@@ -20,6 +20,7 @@ public class Main {
     private void startCalculation(double dollarCourse) throws IOException {
 
         CarProperties carEvaluation = new DataReader().readData();
+        System.out.println("\n" + "Calculated costs in dollars and zloty");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         if (carEvaluation.carBid != 0){
             //System.out.format("%.2f%n",sumAllCosts(carEvaluation, dollarCourse)+"$");
