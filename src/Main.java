@@ -20,18 +20,21 @@ public class Main {
     private void startCalculation(double dollarCourse) throws IOException {
 
         CarProperties carEvaluation = new DataReader().readData();
-
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         if (carEvaluation.carBid != 0){
-
             //System.out.format("%.2f%n",sumAllCosts(carEvaluation, dollarCourse)+"$");
             System.out.println(Math.round(sumAllCosts(carEvaluation, dollarCourse))+" $");
             System.out.println(Math.round(sumAllCosts(carEvaluation, dollarCourse)*dollarCourse)+" zł");
             displayEstimatedValues(carEvaluation);
+            System.out.println("Another calculation? ( yes / no )");
+            if (bufferedReader.readLine().contains("yes")){
+                startCalculation(dollarCourse);
+            }
 
         } else {
             System.out.println("Error 404 - you can't calculate from zero car value!");
             System.out.println("Try again? ( yes / no )");
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
             if (bufferedReader.readLine().contains("yes")){
                 startCalculation(dollarCourse);
             }
