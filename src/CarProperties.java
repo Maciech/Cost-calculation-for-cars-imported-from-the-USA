@@ -1,6 +1,6 @@
 public class CarProperties {
     public int transportUSA;
-    public int transportEU = 780;
+    public int transportEU = 790;
     public int customClearanceUSA = 150;
     public int customClearanceEU = 450;
     public double carBid;
