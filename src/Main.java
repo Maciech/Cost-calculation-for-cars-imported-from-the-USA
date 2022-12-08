@@ -20,17 +20,19 @@ public class Main {
     private void startCalculation(double dollarCourse) throws IOException {
 
         CarProperties carEvaluation = new DataReader().readData();
-        //BankTransfers bankTransfers = new BankTransfers("Pekao", carEvaluation.carBid+auctionFee(carEvaluation.carBid), "$", "Express");
+        BankTransfers bankTransfers = new BankTransfers("Pekao", carEvaluation.carBid+auctionFee(carEvaluation.carBid), "$", "Express");
         System.out.println("\n" + "Calculated costs in dollars and zloty");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         if (carEvaluation.carBid != 0){
             System.out.println(Math.round(sumAllCosts(carEvaluation, dollarCourse))+" $");
             System.out.println(Math.round(sumAllCosts(carEvaluation, dollarCourse)*dollarCourse)+" zł");
             displayEstimatedValues(carEvaluation);
-            //System.out.println(bankTransfers.transferBankName(bankTransfers));
+            System.out.println(bankTransfers.result);
             System.out.println("Another calculation? ( yes / no )");
             if (bufferedReader.readLine().contains("yes")){
                 startCalculation(dollarCourse);
+            } else {
+                System.out.println("Calculation finished properly)");
             }
 
         } else {

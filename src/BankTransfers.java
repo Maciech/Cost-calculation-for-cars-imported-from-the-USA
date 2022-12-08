@@ -11,8 +11,7 @@ public class BankTransfers {
         this.value = value;
         this.currency = currency;
         this.type = type;
-
-
+        transferBankName();
     }
 
     public double transferBankName(){
