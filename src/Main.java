@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         System.out.println("Hello in Car Import Calculator \n");
-        double dollarCourse = 4.52;
+        double dollarCourse = 4.47;
         System.out.println("Current $ calculation: "+dollarCourse + "zł" +"\n");
         //CarProperties carEvaluation = new CarProperties(1200,4200);
         //webConnection conn = new webConnection();
