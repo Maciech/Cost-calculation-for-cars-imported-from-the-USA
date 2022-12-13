@@ -7,8 +7,17 @@ public class CarProperties {
     public boolean over2l = false;
     public double transportPL = 2000;
 
+
     //Class implementation with a lot different parameters, transport from Usa and car bid must be specified
     //rest can be set by default
+    CarProperties(int transportUSA, int transportEU, int customClearanceUSA, int customClearanceEU,boolean capacity, int carBid){
+        this.transportUSA = transportUSA;
+        this.transportEU = transportEU;
+        this.customClearanceUSA = customClearanceUSA;
+        this.customClearanceEU = customClearanceEU;
+        this.over2l = capacity;
+        this.carBid = carBid;
+    }
     CarProperties(int transportUSA, int transportEU, int customClearanceUSA, int customClearanceEU, int carBid){
         this.transportUSA = transportUSA;
         this.transportEU = transportEU;

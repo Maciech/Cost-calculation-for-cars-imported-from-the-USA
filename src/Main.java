@@ -9,15 +9,13 @@ public class Main {
         System.out.println("Hello in Car Import Calculator \n");
         double dollarCourse = 4.52;
         System.out.println("Current $ calculation: "+dollarCourse + "zł" +"\n");
-        //CarProperties carEvaluation = new CarProperties(1200,4200);
-        //webConnection conn = new webConnection();
-        //  conn.readWeb();
+
+        //Main main = new Main();
+        //main.startCalculationForm(dollarCourse);
         applicationForm myForm = new applicationForm(null);
-        Main main = new Main();
-        main.startCalculation(dollarCourse);
 
     }
-    //Initial method from main to start calculating costs
+    //Initial method from main to start calculating costs without form
     private void startCalculation(double dollarCourse) throws IOException {
 
         CarProperties carEvaluation = new DataReader().readData();
@@ -46,9 +44,7 @@ public class Main {
         }
     }
 
-    private void startCalculationForm(double dollarCourse) {
-        //CarProperties carEvaluation = new CarProperties()
-    }
+
 
     //Auction fee based on car Value - minimum 690$ max 1090$, depend on car bid value
     private static double auctionFee(double bidAmount){
@@ -92,7 +88,7 @@ public class Main {
         return bidAmount*0.05 > 650 ? Math.round(bidAmount*0.05) : Math.round(result);
     }
     //Display parameters
-    private static void displayEstimatedValues(CarProperties carProperties){
+    public static void displayEstimatedValues(CarProperties carProperties){
         String displayParameters = "\n" + "Costs estimation" + "\n" +
                 "   Car bid set for: " + carProperties.carBid + "$" + "\n" +
                 "   Car auction fee calculated: " + auctionFee(carProperties.carBid) + " $" +"\n" +
@@ -109,7 +105,7 @@ public class Main {
         System.out.println(displayParameters);
     }
 
-    private static double sumAllCosts(CarProperties carProperties, double dollarCourse){
+    public static double sumAllCosts(CarProperties carProperties, double dollarCourse){
         double totalCost;
         totalCost = carProperties.sumTransportFees(carProperties);
         totalCost += auctionFee(carProperties.carBid);

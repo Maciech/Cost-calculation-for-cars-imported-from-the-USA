@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72399bf2-7a76-43f6-8ff6-9349ea268067" name="Changes" comment="Inside changes with main and transfer">
+    <list default="true" id="72399bf2-7a76-43f6-8ff6-9349ea268067" name="Changes" comment="DB navigator for mySQL connection added and oracle plugin">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_11_28_09_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_11_28_09_00__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/applicationForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/applicationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationForm.java" afterDir="false" />
@@ -22,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Transfer" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,33 +43,20 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2I2J8Cn7IrJVq0epV891ZsmsmXA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP-ProBook6570b/IdeaProjects/AutoKalk/src&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\HP-ProBook6570b\IdeaProjects\AutoKalk\src" />
-    </key>
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -77,7 +68,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -98,42 +88,7 @@
       <option name="project" value="LOCAL" />
       <updated>1669402831255</updated>
     </task>
-    <task id="LOCAL-00002" summary="Cost of transport changed">
-      <created>1670247846819</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1670247846819</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Bank transfer class created in order to recognize bank name and all the costs for abroad transfers">
-      <created>1670500930052</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1670500930052</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Bank transfer class modified and started in new branch, avoiding colission">
-      <created>1670508361893</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1670508361893</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Bank transfer was not added properly, recommit">
-      <created>1670508499264</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1670508499264</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Inside changes with main and transfer">
-      <created>1670509608513</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1670509608513</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,11 +105,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added comment line, describing functions and" />
     <MESSAGE value="Added comment line, describing functions and library for reading actual data from web, not used yet" />
-    <MESSAGE value="Cost of transport changed" />
-    <MESSAGE value="Bank transfer class created in order to recognize bank name and all the costs for abroad transfers" />
-    <MESSAGE value="Bank transfer class modified and started in new branch, avoiding colission" />
-    <MESSAGE value="Bank transfer was not added properly, recommit" />
-    <MESSAGE value="Inside changes with main and transfer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inside changes with main and transfer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comment line, describing functions and library for reading actual data from web, not used yet" />
   </component>
 </project>

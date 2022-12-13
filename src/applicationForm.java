@@ -7,19 +7,21 @@ public class applicationForm extends JDialog{
     private JTextField tfCarBid;
     private JTextField tfTransportUsa;
     private JTextField tfCustomUSA;
-    private JTextField textField4tfShippingEU;
+    private JTextField tfShippingEU;
     private JTextField tfCustomEu;
     private JCheckBox cbCapacity;
     private JButton startCalculationButton;
     private JButton cancelButton;
-    private JTextArea textArea1;
     private JPanel applicationPanel;
+    private JTextField tfResult;
+    private JTextField tfResultZl;
+    double dollarCourse = 4.52;
 
     public applicationForm(JFrame parent){
         super(parent);
         setTitle("Create a new account");
         setContentPane(applicationPanel);
-        setMinimumSize(new Dimension(620, 660));
+        setMinimumSize(new Dimension(1000, 660));
         setModal(true);
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -30,6 +32,40 @@ public class applicationForm extends JDialog{
                 dispose();
             }
         });
+
+        startCalculationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                assign();
+            }
+        });
+
+
         setVisible(true);
+
+
+
     }
+    public  CarProperties carProperties;
+    public void assign(){
+        int carBid = Integer.parseInt(tfCarBid.getText());
+        int transportUSA = Integer.parseInt(tfTransportUsa.getText());
+        int customUSA = Integer.parseInt(tfCustomUSA.getText());
+        int shipping = Integer.parseInt(tfShippingEU.getText());
+        int customEU = Integer.parseInt(tfCustomEu.getText());
+        boolean capacity = Boolean.parseBoolean(String.valueOf(cbCapacity));
+
+        carProperties = new CarProperties(transportUSA,shipping,customUSA,customEU,capacity, carBid);
+        if (carProperties != null){
+            //tfResult.setEnabled(false);
+            //tfResultZl.setEnabled(false);
+            tfResult.setText(Math.round(Main.sumAllCosts(carProperties, dollarCourse))+" $");
+            tfResultZl.setText(Math.round(Main.sumAllCosts(carProperties, dollarCourse)*dollarCourse)+" zł");
+            System.out.println(Math.round(Main.sumAllCosts(carProperties, dollarCourse))+" $");
+            System.out.println(Math.round(Main.sumAllCosts(carProperties, dollarCourse)*dollarCourse)+" zł");
+            Main.displayEstimatedValues(carProperties);
+        }
+
+    }
+
 }
