@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72399bf2-7a76-43f6-8ff6-9349ea268067" name="Changes" comment="Inside changes with main and transfer">
-      <change afterPath="$PROJECT_DIR$/src/applicationForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/applicationForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sport-car.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/united-states-of-america.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/applicationForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/applicationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,16 +46,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/HP-ProBook6570b/IdeaProjects/AutoKalk/src"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP-ProBook6570b/IdeaProjects/AutoKalk/src&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\HP-ProBook6570b\IdeaProjects\AutoKalk\src" />

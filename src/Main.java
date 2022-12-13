@@ -12,6 +12,7 @@ public class Main {
         //CarProperties carEvaluation = new CarProperties(1200,4200);
         //webConnection conn = new webConnection();
         //  conn.readWeb();
+        applicationForm myForm = new applicationForm(null);
         Main main = new Main();
         main.startCalculation(dollarCourse);
 
@@ -43,6 +44,10 @@ public class Main {
                 startCalculation(dollarCourse);
             }
         }
+    }
+
+    private void startCalculationForm(double dollarCourse) {
+        //CarProperties carEvaluation = new CarProperties()
     }
 
     //Auction fee based on car Value - minimum 690$ max 1090$, depend on car bid value
