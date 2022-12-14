@@ -15,13 +15,16 @@ public class applicationForm extends JDialog{
     private JPanel applicationPanel;
     private JTextField tfResult;
     private JTextField tfResultZl;
+    private JTextField tfDisplayAll;
+    private JTextField textField1;
+    private JTextArea taDisplayAll;
     double dollarCourse = 4.52;
 
     public applicationForm(JFrame parent){
         super(parent);
         setTitle("Create a new account");
         setContentPane(applicationPanel);
-        setMinimumSize(new Dimension(1000, 660));
+        setMinimumSize(new Dimension(1000, 860));
         setModal(true);
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -56,14 +59,18 @@ public class applicationForm extends JDialog{
         boolean capacity = Boolean.parseBoolean(String.valueOf(cbCapacity));
 
         carProperties = new CarProperties(transportUSA,shipping,customUSA,customEU,capacity, carBid);
-        if (carProperties != null){
-            //tfResult.setEnabled(false);
-            //tfResultZl.setEnabled(false);
+        if (carBid == 0 || transportUSA == 0 || customUSA == 0 || shipping == 0 || customEU == 0){
+            JOptionPane.showMessageDialog(this,
+                    "Please enter all fields",
+                    "Try again",
+                    JOptionPane.ERROR_MESSAGE);
+        } else {
             tfResult.setText(Math.round(Main.sumAllCosts(carProperties, dollarCourse))+" $");
             tfResultZl.setText(Math.round(Main.sumAllCosts(carProperties, dollarCourse)*dollarCourse)+" zł");
             System.out.println(Math.round(Main.sumAllCosts(carProperties, dollarCourse))+" $");
             System.out.println(Math.round(Main.sumAllCosts(carProperties, dollarCourse)*dollarCourse)+" zł");
-            Main.displayEstimatedValues(carProperties);
+            taDisplayAll.setText(Main.displayEstimatedValues(carProperties));
+
         }
 
     }

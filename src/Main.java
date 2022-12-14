@@ -88,7 +88,7 @@ public class Main {
         return bidAmount*0.05 > 650 ? Math.round(bidAmount*0.05) : Math.round(result);
     }
     //Display parameters
-    public static void displayEstimatedValues(CarProperties carProperties){
+    public static String displayEstimatedValues(CarProperties carProperties){
         String displayParameters = "\n" + "Costs estimation" + "\n" +
                 "   Car bid set for: " + carProperties.carBid + "$" + "\n" +
                 "   Car auction fee calculated: " + auctionFee(carProperties.carBid) + " $" +"\n" +
@@ -103,6 +103,7 @@ public class Main {
                 "   Cost of car delivery in Poland " + carProperties.transportPL + " zł" + "\n"
                 ;
         System.out.println(displayParameters);
+        return displayParameters;
     }
 
     public static double sumAllCosts(CarProperties carProperties, double dollarCourse){
